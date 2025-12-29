@@ -1,15 +1,13 @@
 'use client';
 
-import { Grid, Box, Typography } from '@mui/material';
+import { Grid, Box, Typography, Paper } from '@mui/material';
 import StatCard from '@/components/statcard';
-import Navbar from "@/components/navbar";
-import Sidebar from '@/components/sidebar';
+
 
 export default function dashboard() {
     return (
         <>
-            <Navbar />
-            <Box sx={{ p: 4 }}>
+            <Box sx={{ p: 2 }}>
                 <Typography
                     variant="h5"
                     sx={{
@@ -18,20 +16,22 @@ export default function dashboard() {
                         letterSpacing: '0.1em',
                     }}
                 >
-                    PANEL DE CONTROL
+                    Pagina Principal
                 </Typography>
 
-                <Grid container spacing={3}>
-                    <Grid item xs={12} md={4}>
-                        <StatCard title="Equipos activos" value="24" />
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                        <StatCard title="Incidencias" value="3" />
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                        <StatCard title="Usuarios" value="12" />
-                    </Grid>
-                </Grid>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        '& > :not(style)': {
+                            m: 1,
+                            width: 180,
+                            height: 200,
+                        },
+                    }}
+                >
+                    <Paper elevation={3} />
+                </Box>
             </Box>
         </>
     );

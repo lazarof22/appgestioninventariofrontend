@@ -9,83 +9,120 @@ import Box from '@mui/material/Box';
 import '../app/globals.css';
 
 // Crear un tema personalizado con los colores especificados
-const darkTheme = createTheme({
+const landingTheme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: "dark",
 
     background: {
-      default: '#000000',
-      paper: '#0b0f12', // negro con leve profundidad
+      default: "#0b0616", // violeta oscuro elegante
+      paper: "rgba(255,255,255,0.06)", // glassmorphism
     },
 
     primary: {
-      main: '#00e5ff', // cian brillante del logo
-      light: '#62f7ff',
-      dark: '#00b2cc',
-      contrastText: '#000000',
+      main: "#d946ef", // fucsia vibrante (CTA)
+      light: "#f472ff",
+      dark: "#a21caf",
+      contrastText: "#ffffff",
     },
 
     secondary: {
-      main: '#1e88e5', // azul tech complementario
-      light: '#6ab7ff',
-      dark: '#005cb2',
-      contrastText: '#ffffff',
+      main: "#fb923c", // naranja suave del gradient
+      light: "#fdba74",
+      dark: "#ea580c",
+      contrastText: "#000000",
     },
 
     text: {
-      primary: '#e0f7fa', // blanco frío
-      secondary: '#80deea',
-      disabled: '#4f5b62',
+      primary: "#f5f3ff", // blanco suave
+      secondary: "#d8b4fe", // lila claro
+      disabled: "#9ca3af",
     },
 
-    divider: '#00363a', // línea sutil cian oscuro
+    divider: "rgba(255,255,255,0.08)",
 
     error: {
-      main: '#ff1744',
+      main: "#f43f5e",
     },
-
     success: {
-      main: '#00e676',
+      main: "#22c55e",
     },
-
     info: {
-      main: '#00bcd4',
+      main: "#38bdf8",
     },
-
     warning: {
-      main: '#ff9100',
+      main: "#facc15",
     },
   },
 
   typography: {
-    fontFamily: `'Roboto', 'Segoe UI', sans-serif`,
+    fontFamily: `'Inter', 'Roboto', 'Segoe UI', sans-serif`,
+
     h1: {
-      fontWeight: 700,
-      letterSpacing: '0.05em',
+      fontWeight: 800,
+      letterSpacing: "-0.02em",
     },
+    h2: {
+      fontWeight: 800,
+      letterSpacing: "-0.02em",
+    },
+    h4: {
+      fontWeight: 700,
+    },
+
     button: {
-      textTransform: 'uppercase',
+      textTransform: "none",
       fontWeight: 600,
+      letterSpacing: "0.02em",
     },
   },
 
   shape: {
-    borderRadius: 12,
+    borderRadius: 16,
   },
 
   components: {
-    MuiCard: {
+    MuiCssBaseline: {
       styleOverrides: {
-        root: {
-          background: 'linear-gradient(145deg, #0b0f12, #000000)',
-          border: '1px solid #00363a',
+        body: {
+          background:
+            "radial-gradient(circle at top left, #4c1d95, #0b0616 60%)",
         },
       },
     },
+
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          backdropFilter: "blur(10px)",
+          background:
+            "linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02))",
+          border: "1px solid rgba(255,255,255,0.12)",
+          boxShadow: "0 20px 40px rgba(0,0,0,0.35)",
+        },
+      },
+    },
+
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: 20,
+          borderRadius: 999,
+          paddingLeft: 24,
+          paddingRight: 24,
+        },
+        containedPrimary: {
+          background:
+            "linear-gradient(90deg, #d946ef, #fb923c)",
+          boxShadow: "0 8px 30px rgba(217,70,239,0.4)",
+        },
+      },
+    },
+
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          background: "transparent",
+          backdropFilter: "blur(12px)",
+          borderBottom: "1px solid rgba(255,255,255,0.08)",
         },
       },
     },
@@ -98,7 +135,7 @@ export default function RootLayout({children,}: {children: React.ReactNode;}) {
     <html lang="es">
       <body>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-          <ThemeProvider theme={darkTheme}>
+          <ThemeProvider theme={landingTheme}>
             <CssBaseline />
             <Box
               sx={{
