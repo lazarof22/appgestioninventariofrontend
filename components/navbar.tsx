@@ -22,6 +22,7 @@ import ShareIcon from "@mui/icons-material/Share";
 import SettingsIcon from "@mui/icons-material/Settings";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useRouter } from "next/navigation";
 
 const drawerWidth = 240;
 
@@ -30,6 +31,7 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const router = useRouter();
   return (
     <Box sx={{ display: "flex" }}>
       {/* APP BAR SUPERIOR */}
@@ -86,14 +88,14 @@ export default function DashboardLayout({
 
           {/* NAVIGATION */}
           <List>
-            <ListItemButton selected>
+            <ListItemButton onClick={() => router.push('/dashboard')}>
               <ListItemIcon>
                 <DashboardIcon />
               </ListItemIcon>
               <ListItemText primary="Pagina Principal" />
             </ListItemButton>
 
-            <ListItemButton>
+            <ListItemButton onClick={() => router.push('/computadora')}>
               <ListItemIcon>
                 <FolderIcon />
               </ListItemIcon>
