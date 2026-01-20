@@ -76,16 +76,7 @@ export default function DashboardLayout({
       >
         <Toolbar />
 
-        <Box sx={{ px: 2, py: 3 }}>
-          {/* USER INFO */}
-          <Box sx={{ display: "flex", alignItems: "center", gap: 1.5, mb: 3 }}>
-            <Avatar />
-            <Box>
-            </Box>
-          </Box>
-
-          <Divider sx={{ mb: 2 }} />
-
+        <Box sx={{ px: 1, py: 1 }}>
           {/* NAVIGATION */}
           <List>
             <ListItemButton onClick={() => router.push('/dashboard')}>
@@ -145,7 +136,7 @@ export default function DashboardLayout({
             </ListItemButton>
           </List>
 
-          <Divider sx={{ my: 2 }} />
+          <Divider/>
 
           <List>
             <ListItemButton>

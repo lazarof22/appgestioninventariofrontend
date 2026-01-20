@@ -12,6 +12,21 @@ import '../app/globals.css';
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
+    primary: {
+      main: '#00c853',
+    },
+    secondary: {
+      main: '#ff3d00',
+    },
+    error: {
+      main: '#d50000',
+    },
+    warning: {
+      main: '#ff6d00',
+    },
+    success: {
+      main: '#08e413',
+    },
   },
   typography: {
     fontFamily: ['"Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif'].join(','),
