@@ -51,7 +51,7 @@ export default function DashboardLayout({
           </IconButton>
 
           <Typography variant="h6" fontWeight={700} sx={{ flexGrow: 1 }}>
-            Dashboard
+            Sistema de Gestion de Inventario
           </Typography>
 
           <Avatar sx={{ width: 32, height: 32 }}>L</Avatar>
